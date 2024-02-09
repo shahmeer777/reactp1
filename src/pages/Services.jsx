@@ -8,7 +8,7 @@ function Services() {
   return (
     <>
     
-    <Formik  initialValues={{ name: '', email: '', password: '' }}
+    <Formik  initialValues={{ name: '', email: '', password: '', gender: '' }}
     validationSchema={Yup.object({
       name: Yup.string()
         .max(15, 'Must be 15 characters or less')
@@ -19,6 +19,7 @@ function Services() {
       password: Yup.string()
         .min(8, 'Must be 8 characters or more')
         .required('Required'),
+      gender: Yup.string().required('Required'),
     })}
     onSubmit={values => {alert(JSON.stringify(values))}}
     >
@@ -29,6 +30,13 @@ function Services() {
             <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
             <Field type="password" name="password" placeholder="password" />
             <ErrorMessage name="password" component="div" style={{ color: 'red' }} />
+            <Field as="select" name="gender" >
+                <option value="">select gender</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+            </Field>
+            <ErrorMessage name="gender" component="div" style={{ color: 'red' }} />
             <button type='submit'>submit</button>
         </Form>
     </Formik>
