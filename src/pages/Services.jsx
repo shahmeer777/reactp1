@@ -29,7 +29,7 @@ function Services() {
             <Field type="text" name="email" placeholder="email" />
             <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
             <Field type="password" name="password" placeholder="password" />
-            <ErrorMessage name="password" component="div" style={{ color: 'red' }} />
+            <ErrorMessage name="password" component="div" style={{ color: 'blue' }} />
             <Field as="select" name="gender" >
                 <option value="">select gender</option>
                 <option value="male">male</option>
